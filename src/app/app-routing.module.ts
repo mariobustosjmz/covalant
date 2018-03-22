@@ -12,6 +12,7 @@ import { LogsComponent } from './logs/logs.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
 import { FormComponent } from './form/form.component';
+import { MyNewComponentComponent } from './my-new-component/my-new-component.component';
 
 const routes: Routes = [
     {
@@ -28,7 +29,7 @@ const routes: Routes = [
             },
             {
                 path: 'product',
-                component: DashboardProductComponent,
+                component: MyNewComponentComponent,
                 children: [
                     {
                         path: '',
@@ -91,5 +92,5 @@ export const routedComponents: any[] = [
     MainComponent, LoginComponent,
     DashboardComponent, DashboardProductComponent,
     FormComponent, LogsComponent, DetailComponent,
-    FeaturesFormComponent, ProductFeaturesComponent, ProductOverviewComponent, ProductStatsComponent,
+    FeaturesFormComponent, ProductFeaturesComponent, ProductOverviewComponent, ProductStatsComponent, MyNewComponentComponent
 ];

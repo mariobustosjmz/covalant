@@ -1,5 +1,5 @@
 import { NgModule, Type } from '@angular/core';
-import { BrowserModule, Title }  from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
@@ -15,6 +15,10 @@ import { routedComponents, AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 import { USER_PROVIDER, USERS_API } from './users';
+import { MyNewComponentComponent } from './my-new-component/my-new-component.component';
+import { MyNewDirectiveDirective } from './my-new-directive.directive';
+import { MyNewPipePipe } from './my-new-pipe.pipe';
+import { NewViewComponent } from './new-view/new-view.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -28,6 +32,10 @@ export function getAPI(): string {
   declarations: [
     AppComponent,
     routedComponents,
+    MyNewComponentComponent,
+    MyNewDirectiveDirective,
+    MyNewPipePipe,
+    NewViewComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     AppRoutingModule,
@@ -48,7 +56,7 @@ export function getAPI(): string {
       provide: USERS_API, useFactory: getAPI,
     }, USER_PROVIDER,
   ], // additional providers needed for this module
-  entryComponents: [ ],
-  bootstrap: [ AppComponent ],
+  entryComponents: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
